@@ -17,7 +17,7 @@ public class ExcelReader {
                 for (Cell cell : row) {
                     switch (cell.getCellType()) {
                         case STRING:
-                            System.out.print("string: " + cell.getStringCellValue() + "\t");
+                            System.out.print(cell.getStringCellValue() + ", ");
                             break;
                         case NUMERIC:
                             System.out.print("num: " + cell.getNumericCellValue() + "\t");
