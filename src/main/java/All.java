@@ -31,46 +31,88 @@ public class All {
     private String familySupport;
     private String parentalEducation;
 
-    // All-args constructor
-    public All(Double timestamp, String email, String gender, String attendanceMark, String hasTakenAnyCourse,
-               String attendedInTwoClassTests, String averageObtainedClass, String housingType, String studyHour,
-               String attitudeStudy, String involvementInTuition, String accessToLaptop, Float cgpa, String faculty,
-               Float hscGpa, String submittedAllAssignment, String performedPresentation, String classroomFacilities,
-               String resourceAvailability, String distanceFromLivingPlace, String transportationType,
-               String involvementInClub, String sleepingTime, String mentalHealth, String movieAddiction,
-               String freeTime, String hometown, String familyCondition, String parentalOccupation,
-               String familySupport, String parentalEducation) {
+    // No-args constructor
+    public All() {
+    }
+
+    public All(Double timestamp, String email, String gender, String faculty, Float hscGpa,
+               String attendanceMark, String hasTakenAnyCourse, String attendedInTwoClassTests,
+               String averageObtainedClass, String submittedAllAssignment, String performedPresentation,
+               String housingType, String familyCondition, String parentalOccupation, String classroomFacilities,
+               String resourceAvailability, String studyHour, String distanceFromLivingPlace,
+               String transportationType, String involvementInClub, String attitudeStudy,
+               String sleepingTime, String mentalHealth, String familySupport,
+               String involvementInTuition, String movieAddiction, String freeTime,
+               String parentalEducation, String accessToLaptop, String hometown, Float cgpa) {
+
         this.timestamp = timestamp;
         this.email = email;
         this.gender = gender;
+        this.faculty = faculty;
+        this.hscGpa = hscGpa;
         this.attendanceMark = attendanceMark;
         this.hasTakenAnyCourse = hasTakenAnyCourse;
         this.attendedInTwoClassTests = attendedInTwoClassTests;
         this.averageObtainedClass = averageObtainedClass;
-        this.housingType = housingType;
-        this.studyHour = studyHour;
-        this.attitudeStudy = attitudeStudy;
-        this.involvementInTuition = involvementInTuition;
-        this.accessToLaptop = accessToLaptop;
-        this.cgpa = cgpa;
-        this.faculty = faculty;
-        this.hscGpa = hscGpa;
         this.submittedAllAssignment = submittedAllAssignment;
         this.performedPresentation = performedPresentation;
+        this.housingType = housingType;
+        this.familyCondition = familyCondition;
+        this.parentalOccupation = parentalOccupation;
         this.classroomFacilities = classroomFacilities;
         this.resourceAvailability = resourceAvailability;
+        this.studyHour = studyHour;
         this.distanceFromLivingPlace = distanceFromLivingPlace;
         this.transportationType = transportationType;
         this.involvementInClub = involvementInClub;
+        this.attitudeStudy = attitudeStudy;
         this.sleepingTime = sleepingTime;
         this.mentalHealth = mentalHealth;
+        this.familySupport = familySupport;
+        this.involvementInTuition = involvementInTuition;
         this.movieAddiction = movieAddiction;
         this.freeTime = freeTime;
-        this.hometown = hometown;
-        this.familyCondition = familyCondition;
-        this.parentalOccupation = parentalOccupation;
-        this.familySupport = familySupport;
         this.parentalEducation = parentalEducation;
+        this.accessToLaptop = accessToLaptop;
+        this.hometown = hometown;
+        this.cgpa = cgpa;
+    }
+
+    @Override
+    public String toString() {
+        return "All{" +
+                "timestamp=" + timestamp +
+                ", email='" + email + '\'' +
+                ", gender='" + gender + '\'' +
+                ", faculty='" + faculty + '\'' +
+                ", hscGpa=" + hscGpa +
+                ", attendanceMark='" + attendanceMark + '\'' +
+                ", hasTakenAnyCourse='" + hasTakenAnyCourse + '\'' +
+                ", attendedInTwoClassTests='" + attendedInTwoClassTests + '\'' +
+                ", averageObtainedClass='" + averageObtainedClass + '\'' +
+                ", submittedAllAssignment='" + submittedAllAssignment + '\'' +
+                ", performedPresentation='" + performedPresentation + '\'' +
+                ", housingType='" + housingType + '\'' +
+                ", familyCondition='" + familyCondition + '\'' +
+                ", parentalOccupation='" + parentalOccupation + '\'' +
+                ", classroomFacilities='" + classroomFacilities + '\'' +
+                ", resourceAvailability='" + resourceAvailability + '\'' +
+                ", studyHour='" + studyHour + '\'' +
+                ", distanceFromLivingPlace='" + distanceFromLivingPlace + '\'' +
+                ", transportationType='" + transportationType + '\'' +
+                ", involvementInClub='" + involvementInClub + '\'' +
+                ", attitudeStudy='" + attitudeStudy + '\'' +
+                ", sleepingTime='" + sleepingTime + '\'' +
+                ", mentalHealth='" + mentalHealth + '\'' +
+                ", familySupport='" + familySupport + '\'' +
+                ", involvementInTuition='" + involvementInTuition + '\'' +
+                ", movieAddiction='" + movieAddiction + '\'' +
+                ", freeTime='" + freeTime + '\'' +
+                ", parentalEducation='" + parentalEducation + '\'' +
+                ", accessToLaptop='" + accessToLaptop + '\'' +
+                ", hometown='" + hometown + '\'' +
+                ", cgpa=" + cgpa +
+                '}';
     }
 
     // Getter methods

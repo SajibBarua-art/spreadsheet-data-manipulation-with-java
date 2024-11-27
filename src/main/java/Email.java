@@ -8,6 +8,14 @@ public class Email {
         this.gender = gender;
     }
 
+    @Override
+    public String toString() {
+        return "Email{" +
+                "email='" + email + '\'' +
+                ", gender='" + gender + '\'' +
+                '}';
+    }
+
     // Getter methods
     public String getEmail() {
         return email;
