@@ -17,27 +17,12 @@ public class ExcelReaderWriter {
             int suffixIndex = random.nextInt(suffixesLength);
 
             String prefix = prefixes.get(prefixIndex);
-            String suffix = suffixes.get(suffixIndex);
-            emails.add(prefix + suffix);
+//            String suffix = suffixes.get(suffixIndex);
+            String suffix = "111" + String.valueOf(random.nextInt(4) + 5);
+            emails.add(prefix + suffix + "@student.nstu.edu.bd");
         }
 
         return emails;
-    }
-
-    public static double convertToTimestamp(LocalDateTime dateTime) {
-        // Reference date: January 1, 1900 (Excel base date)
-        LocalDateTime baseDate = LocalDateTime.of(1900, 1, 1, 0, 0, 0, 0);
-
-        // Calculate the number of days between the base date and the given date
-        long daysSinceBaseDate = ChronoUnit.DAYS.between(baseDate, dateTime);
-
-        // Calculate the fraction of the day (hours, minutes, seconds)
-        double fractionOfDay = (double) dateTime.getHour() / 24.0
-                + (double) dateTime.getMinute() / (24.0 * 60.0)
-                + (double) dateTime.getSecond() / (24.0 * 60.0 * 60.0);
-
-        // Combine the days and the fractional part
-        return daysSinceBaseDate + fractionOfDay;
     }
 
     private static List<All> buildAllData(List<String> emails, List<Occupation> occupations,
@@ -45,19 +30,20 @@ public class ExcelReaderWriter {
 
         ArrayList<All> allData = new ArrayList<>();
 
-        int hour = 9, minute = 17, second = 23;
-        for(int i = 0; i < 250; i++) {
+        int hour = 10, minute = 24, second = 23;
+        for(int i = 0; i < 50; i++) {
             String email = emails.get(i);
             Occupation occupation = occupations.get(i);
             Other other = others.get(i);
             Cgpa cgpa = cgpas.get(i);
 
-            LocalDateTime dateTime = LocalDateTime.of(2024, 11, 27, hour, minute, second);
-            double timestamp = convertToTimestamp(dateTime);
+            String date = "11/27/2024 ";
+            String time = String.valueOf(hour) + ":" + String.valueOf(minute) + ":" + String.valueOf(second);
+            String dateTime = date + time;
 
             Random random = new Random();
             int randomSeconds = random.nextInt(10) + 1;
-            int randomMinutes = random.nextInt(2) + 1;
+            int randomMinutes = 6;
 
             second += randomSeconds;
             minute += randomMinutes;
@@ -71,7 +57,7 @@ public class ExcelReaderWriter {
 
 
             All current = new All(
-                timestamp, email, "Male", other.getFaculty(), other.getHscGpa(),
+                dateTime, email, "Female", other.getFaculty(), other.getHscGpa(),
                     cgpa.getAttendanceMark(), cgpa.getHasTakenAnyCourse(), cgpa.getAttendedInTwoClassTests(),
                     cgpa.getAverageObtainedClass(), other.getSubmittedAllAssignment(), other.getPerformedPresentation(),
                     cgpa.getHousingType(), occupation.getFamilyCondition(), occupation.getParentalOccupation(), other.getClassroomFacilities(),
@@ -81,14 +67,6 @@ public class ExcelReaderWriter {
                     occupation.getParentalEducation(), cgpa.getAccessToLaptop(), other.getHometown(), cgpa.getCgpa()
             );
             allData.add(current);
-
-            if(i % 50 == 0) {
-                hour++;
-                if(hour > 23) {
-                    System.out.println("Hour exceeded!");
-                    break;
-                }
-            }
         }
 
         return allData;
@@ -112,8 +90,10 @@ public class ExcelReaderWriter {
         Collections.shuffle(initCgpa);
 
         // build prefixes
-        MaleName maleName = new MaleName();
-        List<String> prefixes = maleName.getNames();
+//        MaleName maleName = new MaleName();
+//        List<String> prefixes = maleName.getNames();
+        FemaleName femaleName = new FemaleName();
+        List<String> prefixes = femaleName.getNames();
 
         // build suffixes
         Suffix suffix = new Suffix(initEmail);
@@ -124,5 +104,7 @@ public class ExcelReaderWriter {
 
         // build alls
         List<All> allData = buildAllData(emails, initOccupation, initOther, initCgpa);
+
+        new ExcelWriter(allData, "src/main/resources/exampleFemale.xlsx");
     }
 }

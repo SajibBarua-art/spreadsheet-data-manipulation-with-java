@@ -30,11 +30,11 @@ public class ExcelReader {
                 Row row = sheet.getRow(r);
 
                 // Initialize the values for each column
-                Double timestamp = null;
+                String timestamp = null;
                 String email = null;
                 String gender = null;
                 String faculty = null;
-                Float hscGpa = null;
+                String hscGpa = null;
                 String attendanceMark = null;
                 String hasTakenAnyCourse = null;
                 String attendedInTwoClassTests = null;
@@ -60,7 +60,7 @@ public class ExcelReader {
                 String parentalEducation = null;
                 String accessToLaptop = null;
                 String hometown = null;
-                Float cgpa = null;
+                String cgpa = null;
 
                 // Iterate over cells in the current row
                 for (int c = 0; c < row.getLastCellNum(); c++) {
@@ -68,7 +68,6 @@ public class ExcelReader {
 
                     switch (c) {
                         case 0:
-                            timestamp = cell.getNumericCellValue(); // Assuming timestamp is numeric
                             break;
                         case 1:
                             email = cell.getStringCellValue();
@@ -80,7 +79,7 @@ public class ExcelReader {
                             faculty = cell.getStringCellValue();
                             break;
                         case 4:
-                            hscGpa = (float) cell.getNumericCellValue();
+                            hscGpa = String.valueOf(cell.getNumericCellValue());
                             break;
                         case 5:
                             attendanceMark = cell.getStringCellValue();
@@ -158,7 +157,7 @@ public class ExcelReader {
                             hometown = cell.getStringCellValue();
                             break;
                         case 30:
-                            cgpa = (float) cell.getNumericCellValue();
+                            cgpa = String.valueOf(cell.getNumericCellValue());
                             break;
                         default:
                             break;

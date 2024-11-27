@@ -1,6 +1,6 @@
 public class Other {
     private String faculty;
-    private Float hscGpa;
+    private String hscGpa;
     private String submittedAllAssignment;
     private String performedPresentation;
     private String classroomFacilities;
@@ -15,7 +15,7 @@ public class Other {
     private String hometown;
 
     // All-args constructor
-    public Other(String faculty, Float hscGpa, String submittedAllAssignment, String performedPresentation,
+    public Other(String faculty, String hscGpa, String submittedAllAssignment, String performedPresentation,
                  String classroomFacilities, String resourceAvailability, String distanceFromLivingPlace,
                  String transportationType, String involvementInClub, String sleepingTime, String mentalHealth,
                  String movieAddiction, String freeTime, String hometown) {
@@ -40,7 +40,7 @@ public class Other {
         return faculty;
     }
 
-    public Float getHscGpa() {
+    public String getHscGpa() {
         return hscGpa;
     }
 

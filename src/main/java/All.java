@@ -1,5 +1,5 @@
 public class All {
-    private Double timestamp;
+    private String timestamp;
     private String email;
     private String gender;
     private String attendanceMark;
@@ -11,9 +11,9 @@ public class All {
     private String attitudeStudy;
     private String involvementInTuition;
     private String accessToLaptop;
-    private Float cgpa;
+    private String cgpa;
     private String faculty;
-    private Float hscGpa;
+    private String hscGpa;
     private String submittedAllAssignment;
     private String performedPresentation;
     private String classroomFacilities;
@@ -35,7 +35,7 @@ public class All {
     public All() {
     }
 
-    public All(Double timestamp, String email, String gender, String faculty, Float hscGpa,
+    public All(String timestamp, String email, String gender, String faculty, String hscGpa,
                String attendanceMark, String hasTakenAnyCourse, String attendedInTwoClassTests,
                String averageObtainedClass, String submittedAllAssignment, String performedPresentation,
                String housingType, String familyCondition, String parentalOccupation, String classroomFacilities,
@@ -43,7 +43,7 @@ public class All {
                String transportationType, String involvementInClub, String attitudeStudy,
                String sleepingTime, String mentalHealth, String familySupport,
                String involvementInTuition, String movieAddiction, String freeTime,
-               String parentalEducation, String accessToLaptop, String hometown, Float cgpa) {
+               String parentalEducation, String accessToLaptop, String hometown, String cgpa) {
 
         this.timestamp = timestamp;
         this.email = email;
@@ -116,7 +116,7 @@ public class All {
     }
 
     // Getter methods
-    public Double getTimestamp() { return timestamp; }
+    public String getTimestamp() { return timestamp; }
     public String getEmail() { return email; }
     public String getGender() { return gender; }
     public String getAttendanceMark() { return attendanceMark; }
@@ -128,9 +128,9 @@ public class All {
     public String getAttitudeStudy() { return attitudeStudy; }
     public String getInvolvementInTuition() { return involvementInTuition; }
     public String getAccessToLaptop() { return accessToLaptop; }
-    public Float getCgpa() { return cgpa; }
+    public String getCgpa() { return cgpa; }
     public String getFaculty() { return faculty; }
-    public Float getHscGpa() { return hscGpa; }
+    public String getHscGpa() { return hscGpa; }
     public String getSubmittedAllAssignment() { return submittedAllAssignment; }
     public String getPerformedPresentation() { return performedPresentation; }
     public String getClassroomFacilities() { return classroomFacilities; }
@@ -149,7 +149,7 @@ public class All {
     public String getParentalEducation() { return parentalEducation; }
 
     // Setter (post) methods
-    public void setTimestamp(Double timestamp) { this.timestamp = timestamp; }
+    public void setTimestamp(String timestamp) { this.timestamp = timestamp; }
     public void setEmail(String email) { this.email = email; }
     public void setGender(String gender) { this.gender = gender; }
     public void setAttendanceMark(String attendanceMark) { this.attendanceMark = attendanceMark; }
@@ -161,9 +161,9 @@ public class All {
     public void setAttitudeStudy(String attitudeStudy) { this.attitudeStudy = attitudeStudy; }
     public void setInvolvementInTuition(String involvementInTuition) { this.involvementInTuition = involvementInTuition; }
     public void setAccessToLaptop(String accessToLaptop) { this.accessToLaptop = accessToLaptop; }
-    public void setCgpa(Float cgpa) { this.cgpa = cgpa; }
+    public void setCgpa(String cgpa) { this.cgpa = cgpa; }
     public void setFaculty(String faculty) { this.faculty = faculty; }
-    public void setHscGpa(Float hscGpa) { this.hscGpa = hscGpa; }
+    public void setHscGpa(String hscGpa) { this.hscGpa = hscGpa; }
     public void setSubmittedAllAssignment(String submittedAllAssignment) { this.submittedAllAssignment = submittedAllAssignment; }
     public void setPerformedPresentation(String performedPresentation) { this.performedPresentation = performedPresentation; }
     public void setClassroomFacilities(String classroomFacilities) { this.classroomFacilities = classroomFacilities; }

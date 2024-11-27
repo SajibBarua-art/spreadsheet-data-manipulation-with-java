@@ -8,12 +8,12 @@ public class Cgpa {
     private String attitudeStudy;
     private String involvementInTuition;
     private String accessToLaptop;
-    private Float cgpa;
+    private String cgpa;
 
     // All-args constructor
     public Cgpa(String attendanceMark, String hasTakenAnyCourse, String attendedInTwoClassTests,
                 String averageObtainedClass, String housingType, String studyHour,
-                String attitudeStudy, String involvementInTuition, String accessToLaptop, Float cgpa) {
+                String attitudeStudy, String involvementInTuition, String accessToLaptop, String cgpa) {
         this.attendanceMark = attendanceMark;
         this.hasTakenAnyCourse = hasTakenAnyCourse;
         this.attendedInTwoClassTests = attendedInTwoClassTests;
@@ -63,7 +63,7 @@ public class Cgpa {
         return accessToLaptop;
     }
 
-    public Float getCgpa() {
+    public String getCgpa() {
         return cgpa;
     }
 }

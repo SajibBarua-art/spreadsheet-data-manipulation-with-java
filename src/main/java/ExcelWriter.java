@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.util.List;
 
 public class ExcelWriter {
-    public void writeDataToExcel(List<All> data, String filePath) {
+    private void writeDataToExcel(List<All> data, String filePath) {
         Workbook workbook = new XSSFWorkbook();
         Sheet sheet = workbook.createSheet("All Data");
 
@@ -86,5 +86,9 @@ public class ExcelWriter {
         style.setFont(font);
         style.setAlignment(HorizontalAlignment.CENTER);
         return style;
+    }
+
+    public ExcelWriter(List<All> data, String filePath) {
+        writeDataToExcel(data, filePath);
     }
 }
