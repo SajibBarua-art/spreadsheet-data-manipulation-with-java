@@ -12,13 +12,30 @@ public class ExcelWriter {
 
         // Create header row
         String[] headers = {
-                "Timestamp", "Email address", "Gender", "Faculty", "HSC gpa", "Attendance mark", "Has retaken any course ?",
-                "Attended in 2 class tests?", "Average of obtained class test's mark( If you have 5 course ,then give the average ct mark of 5 course)",
-                "Submitted all the assignments?", "Performed the presentation? (If any presentation is taken in that semester)",
-                "Type of housing", "Family condition", "Parental occupation", "Classroom facilities", "Availability of resources",
-                "Study hour per week", "Distance from living place to university", "Type of transportation used",
-                "Involvement in any club or organization", "Attitude towards study", "Daily sleeping time",
-                "Mental health condition (Anxiety or depression)", "Family support", "Involvement in tuition", "Movie or web series addiction", "What do you do in free time?", "Parental level of education", "Access to laptop or computer", "Hometown", "Last completed semester GPA/ Final CGPA"
+                "Age", "Gender", "Education Level", "Employment Status", "Family Economic Condition",
+                "Family Type", "Relationship Status", "Do you engage in regular physical activity or exercise?",
+                "Do you engage in religious or spiritual practices?", "How many hours do you sleep per day?",
+                "Smoking habit", "Have you ever used substances (e.g., drugs, alcohol) to cope with depression?",
+                "How often do you compare yourself to others in terms of achievements, appearance, or lifestyle?",
+                "How much time do you spend on social media daily?",
+                "Do you have any chronic health conditions (e.g., blood pressure, thyroid issues) that affect your mood or daily activities?",
+                "How often do conflicts between your parents or family members affect your emotional well-being?",
+                "How confident are you in handling difficult times?",
+                "Have you ever experienced cyber-bullying or online harassment?",
+                "Did you experience any significant trauma during childhood?",
+                "Does your family have a history of mental disorders?",
+                "How often do you feel emotionally supported by your family?",
+                "How often do you feel lonely?",
+                "How often have you been unable to stop or control worrying about your future career or personal growth?",
+                "How often have you had little interest or pleasure in doing things?",
+                "How often have you had trouble sleeping or sleeping too much?",
+                "How often have you felt tired or had little energy?",
+                "How often have you had poor appetite or overeating?",
+                "How often have you been feeling bad about yourself, or that you are a failure, or have let yourself or your family down?",
+                "How often have you had trouble concentrating on things, such as reading the newspaper or watching television?",
+                "Moving or speaking so slowly that other people could have noticed? Or so fidgety or restless that you have been moving a lot more than usual?",
+                "How often have you felt down, depressed, or hopeless?",
+                "How often have you had thoughts that you would be better off dead or of hurting yourself?"
         };
 
         Row headerRow = sheet.createRow(0);
@@ -32,37 +49,38 @@ public class ExcelWriter {
         int rowNum = 1;
         for (All record : data) {
             Row row = sheet.createRow(rowNum++);
-            row.createCell(0).setCellValue(record.getTimestamp());
-            row.createCell(1).setCellValue(record.getEmail());
-            row.createCell(2).setCellValue(record.getGender());
-            row.createCell(3).setCellValue(record.getFaculty());
-            row.createCell(4).setCellValue(record.getHscGpa());
-            row.createCell(5).setCellValue(record.getAttendanceMark());
-            row.createCell(6).setCellValue(record.getHasTakenAnyCourse());
-            row.createCell(7).setCellValue(record.getAttendedInTwoClassTests());
-            row.createCell(8).setCellValue(record.getAverageObtainedClass());
-            row.createCell(9).setCellValue(record.getSubmittedAllAssignment());
-            row.createCell(10).setCellValue(record.getPerformedPresentation());
-            row.createCell(11).setCellValue(record.getHousingType());
-            row.createCell(12).setCellValue(record.getFamilyCondition());
-            row.createCell(13).setCellValue(record.getParentalOccupation());
-            row.createCell(14).setCellValue(record.getClassroomFacilities());
-            row.createCell(15).setCellValue(record.getResourceAvailability());
-            row.createCell(16).setCellValue(record.getStudyHour());
-            row.createCell(17).setCellValue(record.getDistanceFromLivingPlace());
-            row.createCell(18).setCellValue(record.getTransportationType());
-            row.createCell(19).setCellValue(record.getInvolvementInClub());
-            row.createCell(20).setCellValue(record.getAttitudeStudy());
-            row.createCell(21).setCellValue(record.getSleepingTime());
-            row.createCell(22).setCellValue(record.getMentalHealth());
-            row.createCell(23).setCellValue(record.getFamilySupport());
-            row.createCell(24).setCellValue(record.getInvolvementInTuition());
-            row.createCell(25).setCellValue(record.getMovieAddiction());
-            row.createCell(26).setCellValue(record.getFreeTime());
-            row.createCell(27).setCellValue(record.getParentalEducation());
-            row.createCell(28).setCellValue(record.getAccessToLaptop());
-            row.createCell(29).setCellValue(record.getHometown());
-            row.createCell(30).setCellValue(record.getCgpa());
+            row.createCell(0).setCellValue(record.getAge());
+            row.createCell(1).setCellValue(record.getGender());
+            row.createCell(2).setCellValue(record.getEducationLevel());
+            row.createCell(3).setCellValue(record.getEmploymentStatus());
+            row.createCell(4).setCellValue(record.getFamilyEconomicCondition());
+            row.createCell(5).setCellValue(record.getFamilyType());
+            row.createCell(6).setCellValue(record.getRelationshipStatus());
+            row.createCell(7).setCellValue(record.getRegularPhysicalActivity());
+            row.createCell(8).setCellValue(record.getReligiousOrSpiritualPractices());
+            row.createCell(9).setCellValue(record.getSleepHoursPerDay());
+            row.createCell(10).setCellValue(record.getSmokingHabit());
+            row.createCell(11).setCellValue(record.getSubstanceUseToCope());
+            row.createCell(12).setCellValue(record.getComparisonWithOthersFrequency());
+            row.createCell(13).setCellValue(record.getSocialMediaTimePerDay());
+            row.createCell(14).setCellValue(record.getChronicHealthConditions());
+            row.createCell(15).setCellValue(record.getConflictImpactOnWellBeing());
+            row.createCell(16).setCellValue(record.getConfidenceInDifficultTimes());
+            row.createCell(17).setCellValue(record.getExperiencedCyberBullying());
+            row.createCell(18).setCellValue(record.getChildhoodTraumaExperience());
+            row.createCell(19).setCellValue(record.getFamilyHistoryOfMentalDisorders());
+            row.createCell(20).setCellValue(record.getEmotionalSupportFromFamily());
+            row.createCell(21).setCellValue(record.getFeelingOfLoneliness());
+            row.createCell(22).setCellValue(record.getWorryAboutFutureFrequency());
+            row.createCell(23).setCellValue(record.getLossOfInterestFrequency());
+            row.createCell(24).setCellValue(record.getSleepIssuesFrequency());
+            row.createCell(25).setCellValue(record.getTirednessFrequency());
+            row.createCell(26).setCellValue(record.getAppetiteIssuesFrequency());
+            row.createCell(27).setCellValue(record.getSelfWorthIssuesFrequency());
+            row.createCell(28).setCellValue(record.getConcentrationTroubleFrequency());
+            row.createCell(29).setCellValue(record.getUnusualMovementOrRestlessness());
+            row.createCell(30).setCellValue(record.getFeelingDepressedFrequency());
+            row.createCell(31).setCellValue(record.getSuicidalThoughtsFrequency());
         }
 
         // Resize columns to fit data

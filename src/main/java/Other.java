@@ -1,94 +1,45 @@
 public class Other {
-    private String faculty;
-    private String hscGpa;
-    private String submittedAllAssignment;
-    private String performedPresentation;
-    private String classroomFacilities;
-    private String resourceAvailability;
-    private String distanceFromLivingPlace;
-    private String transportationType;
-    private String involvementInClub;
-    private String sleepingTime;
-    private String mentalHealth;
-    private String movieAddiction;
-    private String freeTime;
-    private String hometown;
+    private String employmentStatus;
+    private String experiencedCyberBullying;
+    private String worryAboutFutureFrequency;
+    private String lossOfInterestFrequency;
+    private String sleepIssuesFrequency;
+    private String unusualMovementOrRestlessness;
 
     // All-args constructor
-    public Other(String faculty, String hscGpa, String submittedAllAssignment, String performedPresentation,
-                 String classroomFacilities, String resourceAvailability, String distanceFromLivingPlace,
-                 String transportationType, String involvementInClub, String sleepingTime, String mentalHealth,
-                 String movieAddiction, String freeTime, String hometown) {
-        this.faculty = faculty;
-        this.hscGpa = hscGpa;
-        this.submittedAllAssignment = submittedAllAssignment;
-        this.performedPresentation = performedPresentation;
-        this.classroomFacilities = classroomFacilities;
-        this.resourceAvailability = resourceAvailability;
-        this.distanceFromLivingPlace = distanceFromLivingPlace;
-        this.transportationType = transportationType;
-        this.involvementInClub = involvementInClub;
-        this.sleepingTime = sleepingTime;
-        this.mentalHealth = mentalHealth;
-        this.movieAddiction = movieAddiction;
-        this.freeTime = freeTime;
-        this.hometown = hometown;
+    public Other(String employmentStatus, String experiencedCyberBullying, String worryAboutFutureFrequency,
+                 String lossOfInterestFrequency, String sleepIssuesFrequency,
+                 String unusualMovementOrRestlessness) {
+        this.employmentStatus = employmentStatus;
+        this.experiencedCyberBullying = experiencedCyberBullying;
+        this.worryAboutFutureFrequency = worryAboutFutureFrequency;
+        this.lossOfInterestFrequency = lossOfInterestFrequency;
+        this.sleepIssuesFrequency = sleepIssuesFrequency;
+        this.unusualMovementOrRestlessness = unusualMovementOrRestlessness;
+    }
+
+    public String getEmploymentStatus() {
+        return employmentStatus;
     }
 
     // Getter methods
-    public String getFaculty() {
-        return faculty;
+    public String getExperiencedCyberBullying() {
+        return experiencedCyberBullying;
     }
 
-    public String getHscGpa() {
-        return hscGpa;
+    public String getWorryAboutFutureFrequency() {
+        return worryAboutFutureFrequency;
     }
 
-    public String getSubmittedAllAssignment() {
-        return submittedAllAssignment;
+    public String getLossOfInterestFrequency() {
+        return lossOfInterestFrequency;
     }
 
-    public String getPerformedPresentation() {
-        return performedPresentation;
+    public String getSleepIssuesFrequency() {
+        return sleepIssuesFrequency;
     }
 
-    public String getClassroomFacilities() {
-        return classroomFacilities;
-    }
-
-    public String getResourceAvailability() {
-        return resourceAvailability;
-    }
-
-    public String getDistanceFromLivingPlace() {
-        return distanceFromLivingPlace;
-    }
-
-    public String getTransportationType() {
-        return transportationType;
-    }
-
-    public String getInvolvementInClub() {
-        return involvementInClub;
-    }
-
-    public String getSleepingTime() {
-        return sleepingTime;
-    }
-
-    public String getMentalHealth() {
-        return mentalHealth;
-    }
-
-    public String getMovieAddiction() {
-        return movieAddiction;
-    }
-
-    public String getFreeTime() {
-        return freeTime;
-    }
-
-    public String getHometown() {
-        return hometown;
+    public String getUnusualMovementOrRestlessness() {
+        return unusualMovementOrRestlessness;
     }
 }

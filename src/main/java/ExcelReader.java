@@ -10,10 +10,10 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class ExcelReader {
-    String filePath = "src/main/resources/performance.xlsx"; // Replace with your file path
+    String filePath = "src/main/resources/aois.xlsx"; // Replace with your file path
 
-    void readExcelFile(ArrayList<All> initAll, ArrayList<Cgpa> initCgpa,
-                       ArrayList<Email> initEmail, ArrayList<Occupation> initOccupation, ArrayList<Other> initOther) {
+    void readExcelFile(ArrayList<All> initAll, ArrayList<Education> initEducation,
+                       ArrayList<Family> initFamily, ArrayList<Physical> initPhysical, ArrayList<Mental> initMental, ArrayList<Other> initOther) {
 
 
         try (FileInputStream fis = new FileInputStream(new File(filePath));
@@ -21,183 +21,213 @@ public class ExcelReader {
 
             Sheet sheet = workbook.getSheetAt(0); // Get the first sheet
 
-//            for(int c = 0; c < sheet.getRow(0).getLastCellNum(); c++) {
-//                Cell cell = sheet.getRow(0).getCell(c);
-//                System.out.print("\"" + cell.getStringCellValue() + "\", ");
-//            }
-
-            for (int r = 1; r < sheet.getLastRowNum(); r++) {
+            for (int r = 1; r < 525; r++) {
                 Row row = sheet.getRow(r);
 
                 // Initialize the values for each column
-                String timestamp = null;
-                String email = null;
+                // Initialize the values for each column in the All class
+                String age = null;
                 String gender = null;
-                String faculty = null;
-                String hscGpa = null;
-                String attendanceMark = null;
-                String hasTakenAnyCourse = null;
-                String attendedInTwoClassTests = null;
-                String averageObtainedClass = null;
-                String submittedAllAssignment = null;
-                String performedPresentation = null;
-                String housingType = null;
-                String familyCondition = null;
-                String parentalOccupation = null;
-                String classroomFacilities = null;
-                String resourceAvailability = null;
-                String studyHour = null;
-                String distanceFromLivingPlace = null;
-                String transportationType = null;
-                String involvementInClub = null;
-                String attitudeStudy = null;
-                String sleepingTime = null;
-                String mentalHealth = null;
-                String familySupport = null;
-                String involvementInTuition = null;
-                String movieAddiction = null;
-                String freeTime = null;
-                String parentalEducation = null;
-                String accessToLaptop = null;
-                String hometown = null;
-                String cgpa = null;
+                String educationLevel = null;
+                String employmentStatus = null;
+                String familyEconomicCondition = null;
+                String familyType = null;
+                String relationshipStatus = null;
+                String regularPhysicalActivity = null;
+                String religiousOrSpiritualPractices = null;
+                String sleepHoursPerDay = null;
+                String smokingHabit = null;
+                String substanceUseToCope = null;
+                String comparisonWithOthersFrequency = null;
+                String socialMediaTimePerDay = null;
+                String chronicHealthConditions = null;
+                String conflictImpactOnWellBeing = null;
+                String confidenceInDifficultTimes = null;
+                String experiencedCyberBullying = null;
+                String childhoodTraumaExperience = null;
+                String familyHistoryOfMentalDisorders = null;
+                String emotionalSupportFromFamily = null;
+                String feelingOfLoneliness = null;
+                String worryAboutFutureFrequency = null;
+                String lossOfInterestFrequency = null;
+                String sleepIssuesFrequency = null;
+                String tirednessFrequency = null;
+                String appetiteIssuesFrequency = null;
+                String selfWorthIssuesFrequency = null;
+                String concentrationTroubleFrequency = null;
+                String unusualMovementOrRestlessness = null;
+                String feelingDepressedFrequency = null;
+                String suicidalThoughtsFrequency = null;
 
                 // Iterate over cells in the current row
-                for (int c = 0; c < row.getLastCellNum(); c++) {
+                for (int c = 0; c < 32; c++) {
                     Cell cell = row.getCell(c);
+                    int cellIndex = c + 1;
 
-                    switch (c) {
-                        case 0:
-                            break;
+                    switch (cellIndex) {
                         case 1:
-                            email = cell.getStringCellValue();
+                            age = cell.getStringCellValue();
                             break;
                         case 2:
                             gender = cell.getStringCellValue();
                             break;
                         case 3:
-                            faculty = cell.getStringCellValue();
+                            educationLevel = cell.getStringCellValue();
                             break;
                         case 4:
-                            hscGpa = String.valueOf(cell.getNumericCellValue());
+                            employmentStatus = cell.getStringCellValue();
                             break;
                         case 5:
-                            attendanceMark = cell.getStringCellValue();
+                            familyEconomicCondition = cell.getStringCellValue();
                             break;
                         case 6:
-                            hasTakenAnyCourse = cell.getStringCellValue();
+                            familyType = cell.getStringCellValue();
                             break;
                         case 7:
-                            attendedInTwoClassTests = cell.getStringCellValue();
+                            relationshipStatus = cell.getStringCellValue();
                             break;
                         case 8:
-                            averageObtainedClass = cell.getStringCellValue();
+                            regularPhysicalActivity = cell.getStringCellValue();
                             break;
                         case 9:
-                            submittedAllAssignment = cell.getStringCellValue();
+                            religiousOrSpiritualPractices = cell.getStringCellValue();
                             break;
                         case 10:
-                            performedPresentation = cell.getStringCellValue();
+                            sleepHoursPerDay = cell.getStringCellValue();
                             break;
                         case 11:
-                            housingType = cell.getStringCellValue();
+                            smokingHabit = cell.getStringCellValue();
                             break;
                         case 12:
-                            familyCondition = cell.getStringCellValue();
+                            substanceUseToCope = cell.getStringCellValue();
                             break;
                         case 13:
-                            parentalOccupation = cell.getStringCellValue();
+                            comparisonWithOthersFrequency = cell.getStringCellValue();
                             break;
                         case 14:
-                            classroomFacilities = cell.getStringCellValue();
+                            socialMediaTimePerDay = cell.getStringCellValue();
                             break;
                         case 15:
-                            resourceAvailability = cell.getStringCellValue();
+                            chronicHealthConditions = cell.getStringCellValue();
                             break;
                         case 16:
-                            studyHour = cell.getStringCellValue();
+                            conflictImpactOnWellBeing = cell.getStringCellValue();
                             break;
                         case 17:
-                            distanceFromLivingPlace = cell.getStringCellValue();
+                            confidenceInDifficultTimes = cell.getStringCellValue();
                             break;
                         case 18:
-                            transportationType = cell.getStringCellValue();
+                            experiencedCyberBullying = cell.getStringCellValue();
                             break;
                         case 19:
-                            involvementInClub = cell.getStringCellValue();
+                            childhoodTraumaExperience = cell.getStringCellValue();
                             break;
                         case 20:
-                            attitudeStudy = cell.getStringCellValue();
+                            familyHistoryOfMentalDisorders = cell.getStringCellValue();
                             break;
                         case 21:
-                            sleepingTime = cell.getStringCellValue();
+                            emotionalSupportFromFamily = cell.getStringCellValue();
                             break;
                         case 22:
-                            mentalHealth = cell.getStringCellValue();
+                            feelingOfLoneliness = cell.getStringCellValue();
                             break;
                         case 23:
-                            familySupport = cell.getStringCellValue();
+                            worryAboutFutureFrequency = cell.getStringCellValue();
                             break;
                         case 24:
-                            involvementInTuition = cell.getStringCellValue();
+                            lossOfInterestFrequency = cell.getStringCellValue();
                             break;
                         case 25:
-                            movieAddiction = cell.getStringCellValue();
+                            sleepIssuesFrequency = cell.getStringCellValue();
                             break;
                         case 26:
-                            freeTime = cell.getStringCellValue();
+                            tirednessFrequency = cell.getStringCellValue();
                             break;
                         case 27:
-                            parentalEducation = cell.getStringCellValue();
+                            appetiteIssuesFrequency = cell.getStringCellValue();
                             break;
                         case 28:
-                            accessToLaptop = cell.getStringCellValue();
+                            selfWorthIssuesFrequency = cell.getStringCellValue();
                             break;
                         case 29:
-                            hometown = cell.getStringCellValue();
+                            concentrationTroubleFrequency = cell.getStringCellValue();
                             break;
                         case 30:
-                            cgpa = String.valueOf(cell.getNumericCellValue());
+                            unusualMovementOrRestlessness = cell.getStringCellValue();
+                            break;
+                        case 31:
+                            feelingDepressedFrequency = cell.getStringCellValue();
+                            break;
+                        case 32:
+                            suicidalThoughtsFrequency = cell.getStringCellValue();
                             break;
                         default:
                             break;
                     }
                 }
 
+                System.out.println(age + ", " + gender + ", " + educationLevel + ", " + employmentStatus + ", " +
+                        familyEconomicCondition + ", " + familyType + ", " + relationshipStatus + ", " +
+                        regularPhysicalActivity + ", " + religiousOrSpiritualPractices + ", " + sleepHoursPerDay + ", " +
+                        smokingHabit + ", " + substanceUseToCope + ", " + comparisonWithOthersFrequency + ", " +
+                        socialMediaTimePerDay + ", " + chronicHealthConditions + ", " + conflictImpactOnWellBeing + ", " +
+                        confidenceInDifficultTimes + ", " + experiencedCyberBullying + ", " + childhoodTraumaExperience + ", " +
+                        familyHistoryOfMentalDisorders + ", " + emotionalSupportFromFamily + ", " + feelingOfLoneliness + ", " +
+                        worryAboutFutureFrequency + ", " + lossOfInterestFrequency + ", " + sleepIssuesFrequency + ", " +
+                        tirednessFrequency + ", " + appetiteIssuesFrequency + ", " + selfWorthIssuesFrequency + ", " +
+                        concentrationTroubleFrequency + ", " + unusualMovementOrRestlessness + ", " + feelingDepressedFrequency + ", " +
+                        suicidalThoughtsFrequency);
+
                 // Create a new All object using the all-args constructor
                 All tempAll = new All(
-                        timestamp, email, gender, faculty, hscGpa, attendanceMark, hasTakenAnyCourse,
-                        attendedInTwoClassTests, averageObtainedClass, submittedAllAssignment,
-                        performedPresentation, housingType, familyCondition, parentalOccupation,
-                        classroomFacilities, resourceAvailability, studyHour, distanceFromLivingPlace,
-                        transportationType, involvementInClub, attitudeStudy, sleepingTime,
-                        mentalHealth, familySupport, involvementInTuition, movieAddiction,
-                        freeTime, parentalEducation, accessToLaptop, hometown, cgpa
+                        age, gender, educationLevel, employmentStatus, familyEconomicCondition, familyType,
+                        relationshipStatus, regularPhysicalActivity, religiousOrSpiritualPractices, sleepHoursPerDay,
+                        smokingHabit, substanceUseToCope, comparisonWithOthersFrequency, socialMediaTimePerDay,
+                        chronicHealthConditions, conflictImpactOnWellBeing, confidenceInDifficultTimes,
+                        experiencedCyberBullying, childhoodTraumaExperience, familyHistoryOfMentalDisorders,
+                        emotionalSupportFromFamily, feelingOfLoneliness, worryAboutFutureFrequency,
+                        lossOfInterestFrequency, sleepIssuesFrequency, tirednessFrequency, appetiteIssuesFrequency,
+                        selfWorthIssuesFrequency, concentrationTroubleFrequency, unusualMovementOrRestlessness,
+                        feelingDepressedFrequency, suicidalThoughtsFrequency
                 );
 
-                Cgpa tempCgpa = new Cgpa(
-                        attendanceMark, hasTakenAnyCourse, attendedInTwoClassTests,
-                        averageObtainedClass, housingType, studyHour, attitudeStudy,
-                        involvementInTuition, accessToLaptop, cgpa
+                // Create a new Family object using the all-args constructor
+                Family tempFamily = new Family(
+                        conflictImpactOnWellBeing, familyHistoryOfMentalDisorders,
+                        emotionalSupportFromFamily, feelingOfLoneliness
                 );
 
+                // Create a new Physical object using the all-args constructor
+                Physical tempPhysical = new Physical(
+                        age, gender, regularPhysicalActivity, sleepHoursPerDay, smokingHabit,
+                        socialMediaTimePerDay, chronicHealthConditions, tirednessFrequency,
+                        appetiteIssuesFrequency
+                );
+
+                // Create a new Mental object using the all-args constructor
+                Mental tempMental = new Mental(
+                        religiousOrSpiritualPractices, substanceUseToCope, comparisonWithOthersFrequency,
+                        confidenceInDifficultTimes, childhoodTraumaExperience, selfWorthIssuesFrequency,
+                        concentrationTroubleFrequency, feelingDepressedFrequency, suicidalThoughtsFrequency
+                );
+
+                // Create a new Other object using the all-args constructor
                 Other tempOther = new Other(
-                        faculty, hscGpa, submittedAllAssignment, performedPresentation,
-                        classroomFacilities, resourceAvailability, distanceFromLivingPlace,
-                        transportationType, involvementInClub, sleepingTime, mentalHealth,
-                        movieAddiction, freeTime, hometown
+                        employmentStatus,
+                        experiencedCyberBullying, worryAboutFutureFrequency, lossOfInterestFrequency,
+                        sleepIssuesFrequency, unusualMovementOrRestlessness
                 );
 
-                Email tempEmail = new Email(email, gender);
-
-                Occupation tempOccupation = new Occupation(
-                        familyCondition, parentalOccupation, familySupport, parentalEducation
+                // Create a new Education object using the all-args constructor
+                Education tempEducation = new Education(
+                        educationLevel, familyEconomicCondition, familyType, relationshipStatus
                 );
 
                 initAll.add(tempAll);
-                initEmail.add(tempEmail);
-                initCgpa.add(tempCgpa);
-                initOccupation.add(tempOccupation);
+                initFamily.add(tempFamily);
+                initPhysical.add(tempPhysical);
+                initMental.add(tempMental);
+                initEducation.add(tempEducation);
                 initOther.add(tempOther);
             }
         } catch (IOException e) {
